@@ -54,7 +54,7 @@ Cloud Enthusiast | AWS | Linux | DevOps | Automation
 
 1. Clone the repository:
    ```bash
-   git clone : https://github.com/jaya9850/internship-project-on-aws
+   git clone : https://github.com/jaya9850/internship-project-on-aws.git
    cd aws-cloud-projects
    ```
 
