@@ -1,3 +1,20 @@
+Project 2: ✉️ Serverless Contact Form with API Gateway + Lambda + S3
+🛠️ Steps
+Create S3 bucket: contact-form-submission-0911.
+
+Create Lambda function (storeContactFormData, Python 3.12).
+
+Use API Gateway to expose a POST route.
+
+Lambda stores form data as .json in S3.
+
+Add IAM permissions and enable CORS on API Gateway.
+
+Create a simple HTML form to submit data.
+
+
+
+#Code
 const AWS = require('aws-sdk');
 const s3 = new AWS.S3();
 const BUCKET_NAME = 'contact-form-storage-0911';
