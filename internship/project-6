@@ -1,0 +1,15 @@
+Project 6: 🧹 Scheduled File Cleanup Using Lambda
+🎯 Objective
+Automatically delete S3 files older than 30 days using a scheduled Lambda function.
+
+🛠️ Steps
+Create an S3 bucket for files.
+
+Create IAM Role (LambdaS3CleanupRole) with AmazonS3FullAccess and CloudWatchLogsFullAccess.
+
+Create Lambda function (S3CleanupFunction, Python 3.11).
+
+Schedule it using EventBridge (e.g., rate(1 day)).
+
+Sample cleanup logic (conceptually described, actual code not included in the document).
+
