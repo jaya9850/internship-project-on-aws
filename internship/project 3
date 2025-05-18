@@ -1,0 +1,24 @@
+Project 3: 🌐 Static Website Hosting on S3 + CloudFront
+🛠️ Steps
+Create an HTML file (index.html) with welcome text.
+
+Create S3 bucket (pratiksha-ssh) and upload the file.
+
+Enable static website hosting in bucket properties.
+
+Set bucket policy to allow public read:
+
+json
+Copy code
+{
+  "Version": "2012-10-17",
+  "Statement": [{
+    "Sid": "PublicReadForWebsite",
+    "Effect": "Allow",
+    "Principal": "*",
+    "Action": "s3:GetObject",
+    "Resource": "arn:aws:s3:::pratiksha-ssh/*"
+  }]
+}
+Access website via endpoint provided by S3.
+
