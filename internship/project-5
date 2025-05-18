@@ -1,0 +1,15 @@
+Project 5: 💾 EC2 + S3 Integration
+🛠️ Steps
+Create S3 bucket (e.g., my-ec2-s3-integration-bucket).
+
+Create IAM Role (EC2-S3-Access-Role) with AmazonS3FullAccess.
+
+Launch EC2 with attached IAM role.
+
+SSH into EC2 and configure AWS CLI.
+
+Use AWS CLI to upload/download files:
+
+#commands:
+aws s3 cp filename.txt s3://my-ec2-s3-integration-bucket/
+aws s3 rm s3://my-ec2-s3-integration-bucket/filename.txt
