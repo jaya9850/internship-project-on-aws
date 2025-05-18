@@ -1,0 +1,36 @@
+# 🚀 AWS Automation Projects by Pratiksha Bhosale
+
+## Project 1: ✅ Automate PNG Transfer Between S3 Buckets Using AWS Lambda
+
+### 🎯 Objective
+Automatically transfer `.png` files uploaded to `bucket1` into a specific folder in `bucket2` using AWS Lambda.
+
+### 🛠️ Steps
+1. Create `bucket1` and `bucket2` in the same region.
+2. Create Lambda function (`Python 3.12`).
+3. Add S3 PUT trigger for `bucket1`.
+4. Update IAM role to allow `GetObject` from `bucket1` and `PutObject` to `bucket2`.
+5. Add and test this Lambda code:
+
+```python
+import boto3, urllib.parse
+s3 = boto3.client('s3')
+
+def lambda_handler(event, context):
+    try:
+        source_bucket = event['Records'][0]['s3']['bucket']['name']
+        key = urllib.parse.unquote_plus(event['Records'][0]['s3']['object']['key'])
+        if not key.lower().endswith('.png'):
+            print(f"Not a PNG file: {key}")
+            return
+        destination_bucket = 'bucket2-yourname'
+        destination_key = f"copied-images/{key.split('/')[-1]}"
+        s3.copy_object(
+            CopySource={'Bucket': source_bucket, 'Key': key},
+            Bucket=destination_bucket,
+            Key=destination_key
+        )
+        print(f"Copied {key} to {destination_bucket}/{destination_key}")
+    except Exception as e:
+        print(f"Error copying {key}: {e}")
+        raise e
