@@ -1,0 +1,13 @@
+Project 4: 🤖 Ansible-based NGINX Web Server Automation on AWS EC2
+🛠️ Steps
+Launch RHEL EC2 instance.
+
+Install Ansible on master node.
+
+Prepare inventory file and na.yml playbook.
+
+Run the playbook:
+
+#command to run playbook
+ansible-playbook -i inventory na.yml
+Verify NGINX service on slave node.
